@@ -1,0 +1,22 @@
+
+public class Ingestor {
+    public List<Document> ingestDocuments(String directoryPath) {
+        List<Document> documents = new ArrayList<>();
+        
+        try (Stream<Path> paths = Files.walk(Paths.get(directoryPath))) {
+            paths.filter(Files::isRegularFile)
+                 .forEach(path -> {
+                     Document doc = processFile(path);
+                     documents.add(doc);
+                 });
+        } catch (IOException e) {
+            System.err.println("Ingestion error: " + e.getMessage());
+        }
+        
+        return documents;
+    }
+    
+    private Document processFile(Path path) {
+        // File processing implementation
+    }
+}
