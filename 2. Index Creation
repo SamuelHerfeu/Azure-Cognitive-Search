@@ -1,0 +1,26 @@
+Index Creation (Java with Lucene)
+
+public class Indexer {
+    public void createIndex(List<Document> documents, String indexDirectory) {
+        try {
+            Directory directory = FSDirectory.open(Paths.get(indexDirectory));
+            Analyzer analyzer = new StandardAnalyzer();
+            IndexWriterConfig config = new IndexWriterConfig(analyzer);
+            
+            try (IndexWriter writer = new IndexWriter(directory, config)) {
+                for (Document doc : documents) {
+                    org.apache.lucene.document.Document luceneDoc = 
+                        new org.apache.lucene.document.Document();
+                    
+                    // Add fields to Lucene document
+                    luceneDoc.add(new TextField("content", doc.getContent(), Field.Store.YES));
+                    luceneDoc.add(new StringField("id", doc.getId(), Field.Store.YES));
+                    
+                    writer.addDocument(luceneDoc);
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Indexing error: " + e.getMessage());
+        }
+    }
+}
