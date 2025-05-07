@@ -1,6 +1,5 @@
 Key Dependencies
 
-
 <dependencies>
     <!-- Azure AI SDK for Java -->
     <dependency>
