@@ -1,29 +1,8 @@
-Desafio de Organização e Pesquisa de Documentos com IA usando Java
-Visão Geral
+Overview
 
-Este projeto demonstra minha implementação em Java das técnicas de inteligência artificial para organização e pesquisa de documentos. Adaptei o desafio original para a stack Java, mantendo as três etapas principais: ingestão de conteúdo, criação de índices inteligentes e exploração dos dados.
-Estrutura do Repositório (Java)
+This project demonstrates my Java implementation of AI techniques for document organization and search. I adapted the original challenge to the Java stack while maintaining the three main phases: content ingestion, intelligent index creation, and data exploration.
+Repository Structure (Java)
 
-/
 
-├── README.md                # Documentação principal
 
-├── pom.xml                  # Configuração Maven
-
-├── /src
-
-│   ├── /main/java/com/dio/ia
-
-│   │   ├── Ingestor.java    # Classe de ingestão de dados
-
-│   │   ├── Indexador.java   # Classe de criação de índices
-
-│   │   ├── Explorer.java    # Classe de exploração
-
-│   │   └── model/           # Classes de modelo
-
-│   └── /resources           # Arquivos de configuração
-
-├── /docs                    # Documentação técnica
-
-└── /images                  # Capturas de tela
+![Screenshot From 2025-05-07 18-42-36](https://github.com/user-attachments/assets/36f5feee-a331-493a-990f-6e0a97f71a20)
