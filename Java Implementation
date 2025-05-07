@@ -1,0 +1,18 @@
+
+<dependencies>
+    <!-- Azure AI SDK for Java -->
+    <dependency>
+        <groupId>com.azure</groupId>
+        <artifactId>azure-ai-documentintelligence</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+    
+    <!-- Apache Lucene for indexing -->
+    <dependency>
+        <groupId>org.apache.lucene</groupId>
+        <artifactId>lucene-core</artifactId>
+        <version>9.8.0</version>
+    </dependency>
+    
+    <!-- Other dependencies -->
+</dependencies>
