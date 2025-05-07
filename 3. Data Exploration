@@ -1,0 +1,24 @@
+public class Explorer {
+    public List<SearchResult> search(String query, String indexDirectory) {
+        List<SearchResult> results = new ArrayList<>();
+        
+        try {
+            Directory directory = FSDirectory.open(Paths.get(indexDirectory));
+            IndexReader reader = DirectoryReader.open(directory);
+            IndexSearcher searcher = new IndexSearcher(reader);
+            
+            QueryParser parser = new QueryParser("content", new StandardAnalyzer());
+            Query luceneQuery = parser.parse(query);
+            
+            TopDocs topDocs = searcher.search(luceneQuery, 10);
+            for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
+                org.apache.lucene.document.Document doc = searcher.doc(scoreDoc.doc);
+                results.add(new SearchResult(doc));
+            }
+        } catch (Exception e) {
+            System.err.println("Search error: " + e.getMessage());
+        }
+        
+        return results;
+    }
+}
